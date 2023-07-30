@@ -1,13 +1,5 @@
 node {
     def commit_it
-  stage('Checkout external proj') {
-        steps {
-            git branch: 'main',
-                credentialsId: 'github-lamtranvinh',
-                url: ''https://LamTranVinh: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@github.com/LamTranVinh/jenkins-1.git
-            sh "ls -lat"
-        }
-    }
     stage('Preparation') {
 	checkout scm
 	sh "git rev-parse --short HEAD > .git/commit-id"
