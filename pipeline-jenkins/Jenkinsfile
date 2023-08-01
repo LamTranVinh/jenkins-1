@@ -1,7 +1,7 @@
 node {
     def commit_it
     stage('Preparation') {
-	checkout scm
+	git url: 'https://github.com/LamTranVinh/jenkins-1.git', branch: 'main', credentialsId: 'github_creds'
 	sh "git rev-parse --short HEAD > .git/commit-id"
 	commit_id = readfile('.git/commit-id').trim()
     }
