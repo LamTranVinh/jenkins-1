@@ -1,9 +1,13 @@
 node {
     def commit_it
-    stage('Preparation') {
-	git url: 'https://github.com/LamTranVinh/jenkins-1.git', branch: 'main', credentialsId: 'github_creds'
-	sh "git rev-parse --short HEAD > .git/commit-id"
-	commit_id = readfile('.git/commit-id').trim()
+    stage('Checkout external proj') {
+        steps {
+            git branch: 'main',
+                credentialsId: 'github_creds',
+                url: 'https://github.com/LamTranVinh/jenkins-1.git'
+
+            sh "ls -lat"
+        }
     }
 
     stage('test') {
