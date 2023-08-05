@@ -1,4 +1,4 @@
-node {
+node { 
     def commit_it
     stage('Checkout external proj') {
         steps {
