@@ -2,9 +2,9 @@ node {
     def commit_it
     stage('Checkout external proj') {
         steps {
-            git branch: 'main',
-                credentialsId: 'github_creds',
-                url: 'https://github.com/LamTranVinh/jenkins-1.git'
+            // git branch: 'main',
+            //     credentialsId: 'github_creds',
+            //     url: 'https://github.com/LamTranVinh/jenkins-1.git'
 
             sh "ls -lat"
         }
